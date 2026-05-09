@@ -44,7 +44,7 @@ canvas#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 .logo-img{width:38px;height:38px;border-radius:10px;object-fit:cover}
 .logo-icon-fallback{width:38px;height:38px;border-radius:10px;
   background:linear-gradient(135deg,#ff5ea0,#8b50e0,#5b9cf5);
-  display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;font-weight:900}
+  display:none;align-items:center;justify-content:center;font-size:20px;color:#fff;font-weight:900}
 .logo{font-size:22px;font-weight:900;letter-spacing:3px;
   background:linear-gradient(135deg,#ff6eb4,#c080ff,#5090e0);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -56,7 +56,7 @@ canvas#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
   font-size:13px;font-weight:700}
 .curr-img{width:26px;height:26px;border-radius:50%;object-fit:cover}
 .curr-icon-fb{width:26px;height:26px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-size:14px}
+  display:none;align-items:center;justify-content:center;font-size:14px}
 .ci-dice{background:linear-gradient(135deg,#e03040,#a01020);box-shadow:0 0 8px rgba(224,48,64,.4)}
 .ci-stone{background:linear-gradient(135deg,#3090e0,#1050a0);box-shadow:0 0 8px rgba(48,144,224,.4)}
 
@@ -94,6 +94,7 @@ canvas#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
   transition:all .3s;border:1px solid transparent;position:relative;gap:0;overflow:hidden;padding-bottom:4px
 }
 .bcell .ci{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;border-radius:7px;z-index:0}
+.bcell .ci-fb{position:absolute;inset:0;z-index:0;display:none;align-items:center;justify-content:center;font-size:28px}
 .bcell .cl{font-size:12px;white-space:nowrap;position:relative;z-index:1;
   text-shadow:0 1px 3px rgba(0,0,0,.9);font-weight:700;padding:4px 0 3px;
   background:linear-gradient(0deg,rgba(0,0,0,.5),transparent);width:100%}
@@ -119,7 +120,7 @@ canvas#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 }
 .player-token img{width:100%;height:100%;object-fit:cover}
 .player-token .token-fb{width:100%;height:100%;background:var(--accent);
-  display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff}
+  display:none;align-items:center;justify-content:center;font-size:15px;color:#fff}
 
 /* Board center cell */
 .bcell.center-cell{
@@ -169,7 +170,7 @@ canvas#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
   z-index:1;pointer-events:none}
 .r-card .r-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:0}
 .r-card .r-bg-fb{position:absolute;inset:0;z-index:0;
-  display:flex;align-items:center;justify-content:center;font-size:28px}
+  display:none;align-items:center;justify-content:center;font-size:28px}
 .r-card .r-info{position:relative;z-index:2;padding:4px 4px 6px}
 .r-name{font-size:9px;font-weight:700;line-height:1.1}
 .rc-s{border:1.5px solid rgba(242,201,76,.5)}.rc-s .r-bg-fb{background:linear-gradient(180deg,#2a1a08,#140c04)}
@@ -199,7 +200,7 @@ canvas#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
   box-shadow:0 0 50px rgba(255,255,255,.25);animation:diceRoll .7s ease-out}
 .dice img{width:100%;height:100%;object-fit:cover}
 .dice-fb{width:90px;height:90px;background:linear-gradient(145deg,#fff,#e8e8e8);border-radius:18px;
-  display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:900;color:#111}
+  display:none;align-items:center;justify-content:center;font-size:44px;font-weight:900;color:#111}
 @keyframes diceRoll{
   0%{transform:rotateX(0)rotateY(0)rotateZ(0)scale(.4)}
   25%{transform:rotateX(200deg)rotateY(120deg)rotateZ(50deg)scale(1.15)}
@@ -220,7 +221,7 @@ canvas#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
   z-index:1;pointer-events:none}
 .reveal-card .card-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;z-index:0}
 .reveal-card .card-bg-fb{position:absolute;inset:0;z-index:0;
-  display:flex;align-items:center;justify-content:center;font-size:52px}
+  display:none;align-items:center;justify-content:center;font-size:52px}
 .reveal-card .card-info{position:relative;z-index:2;padding:10px 8px 12px}
 .rv-s{border:2px solid var(--gold);box-shadow:0 0 28px rgba(242,201,76,.35)}
 .rv-s .card-bg-fb{background:linear-gradient(180deg,#3a2810,#181008)}
@@ -290,14 +291,14 @@ canvas#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 <!-- Header -->
 <header class="header">
   <div class="logo-group">
-    <img class="logo-img" src="logo-icon.png" alt="logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="display:block">
-    <div class="logo-icon-fallback" style="display:none">異</div>
+    <img class="logo-img" src="logo-icon.png" alt="logo">
+    <div class="logo-icon-fallback">異</div>
     <div><div class="logo">异 环</div><div class="logo-sub">NEVERNESS TO EVERNESS</div></div>
   </div>
   <div class="currency-bar">
     <div class="curr">
-      <img class="curr-img" src="dice-icon.png" alt="骰子" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="display:block">
-      <div class="curr-icon-fb ci-dice" style="display:none">🎲</div>
+      <img class="curr-img" src="dice-icon.png" alt="骰子">
+      <div class="curr-icon-fb ci-dice">🎲</div>
       <span id="diceCount">300</span>
     </div>
   </div>
@@ -402,7 +403,7 @@ canvas#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none}
   <div class="modal" style="max-width:360px;text-align:center;padding:16px">
     <button class="modal-close" onclick="hideReward()">✕</button>
     <h3 style="font-size:15px;margin-bottom:8px">🎁 感谢打赏！</h3>
-    <img src="xx.png" alt="打赏" style="width:100%;border-radius:10px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+    <img src="xx.png" alt="打赏" style="width:100%;border-radius:10px">
     <div style="display:none;color:#555;padding:30px;font-size:13px">✨ 谢谢老板支持 ✨</div>
   </div>
 </div>
@@ -473,8 +474,8 @@ function cellIconHTML(t){
   const emojis={st:'🏁',s:'👑',a:'💜',sw:'♟️'};
   const labels={st:'起点',s:'S宝箱',a:'A宝箱',sw:'失维棋子'};
   const f=imgs[t];
-  if(f) return{html:`<img class="ci" src="${f}" alt="" onerror="this.outerHTML='<span>${emojis[t]}</span>'">`,label:labels[t]};
-  return{html:`<span>${emojis[t]||'?'}</span>`,label:labels[t]||''};
+  if(f) return{html:`<img class="ci" src="${f}" alt=""><span class="ci-fb">${emojis[t]}</span>`,label:labels[t]};
+  return{html:`<span class="ci-fb">${emojis[t]||'?'}</span>`,label:labels[t]||''};
 }
 
 function renderBoard(){
@@ -498,7 +499,7 @@ function updateToken(){
   board.querySelectorAll('.bcell.landed').forEach(c=>c.classList.remove('landed'));
   cell.classList.add('landed');
   const token=document.createElement('div');token.className='player-token';
-  token.innerHTML=`<img src="token.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="display:block"><div class="token-fb" style="display:none">🐱</div>`;
+  token.innerHTML=`<img src="token.png" alt=""><div class="token-fb">🐱</div>`;
   const cr=cell.getBoundingClientRect(),br=board.getBoundingClientRect();
   token.style.left=(cr.left-br.left+cr.width/2-21)+'px';
   token.style.top=(cr.top-br.top+cr.height/2-21)+'px';
@@ -549,8 +550,8 @@ async function doPull(count){
   await showAnimation(results,count);displayResults(results);updateUI();isAnimating=false;
 }
 
-// Generate card image bg with fallback to colored bg + emoji
-function cardBG(item,cls){return item.img?`<img class="${cls}" src="${item.img}" alt="${item.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" loading="lazy">`+`<div class="${cls}-fb" style="display:none">${item.emoji||'✦'}</div>`:`<div class="${cls}-fb">${item.emoji||'✦'}</div>`}
+// Generate card image bg with fallback
+function cardBG(item,cls){return item.img?`<img class="${cls}" src="${item.img}" alt="${item.name}" loading="lazy">`+`<div class="${cls}-fb">${item.emoji||'✦'}</div>`:`<div class="${cls}-fb">${item.emoji||'✦'}</div>`}
 
 async function showAnimation(results,count){
   const overlay=document.getElementById('overlay'),content=document.getElementById('overlayContent');
@@ -559,8 +560,8 @@ async function showAnimation(results,count){
   // Phase 1: Dice
   content.innerHTML=`
     <div class="dice-wrap">
-      <img class="dice" src="dice-${dv}.png" alt="骰子${dv}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="display:block">
-      <div class="dice-fb" style="display:none">${['⚀','⚁','⚂','⚃','⚄','⚅'][dv-1]}</div>
+      <img class="dice" src="dice-${dv}.png" alt="骰子${dv}">
+      <div class="dice-fb">${['⚀','⚁','⚂','⚃','⚄','⚅'][dv-1]}</div>
     </div>
     <p style="color:#999;font-size:13px">骰子滚动中… <b style="color:#fff">${dv} 点</b></p>`;
   await sleep(count===1?1100:900);
@@ -695,6 +696,16 @@ function init(){renderBoard();updateToken();updateUI()}
 init();
 console.log('%c🎲 异环·斯卡布罗集市 %c模拟抽卡已就绪','font-size:16px;color:#f2c94c;','color:#aaa');
 console.log('%c空格=单抽 | 回车=十连 | "一键抽卡"=抽到S为止','color:#888;font-size:11px');
+
+// Global image error handler — when any img fails, hide it and show the sibling fallback
+document.addEventListener('error',function(e){
+  if(e.target.tagName==='IMG'){
+    e.target.style.display='none';
+    var fb=e.target.nextElementSibling;
+    if(fb){fb.style.display='flex';fb.style.alignItems='center';fb.style.justifyContent='center'}
+  }
+},true);
+</script>
 </script>
 </body>
 </html>
